@@ -1,5 +1,5 @@
 import Props from './LoginLayout.props';
-import Logo from '@components/common/Logo';
+//import Logo from '@components/common/Logo';
 
 import LoginImage from '@assets/loginImage.svg';
 
@@ -7,7 +7,7 @@ const LoginLayout: React.FC<Props> = ({ children, className = '', ...props }) =>
 	return (
 		<section className={className + ' grid grid-cols-2'} {...props}>
 			<div className='pl-28 pt-16'>
-				<Logo />
+				{/*<Logo />*/}
 				<div>
 					{children}
 				</div>

@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
-import useMenu from '../../../stores/useMenu';
+//import useMenu from '../../../stores/useMenu'; 
 import Props from './SidebarItem.props';
 
 const SidebarItem: React.FC<Props> = ({ className = '', ref, label, Icon, href = '', validateEndsWith, colorType, ...props }) => {
-	const setIsMenuOpened = useMenu((state) => state.setIsMenuOpened);
+	//const setIsMenuOpened = useMenu((state) => state.setIsMenuOpened);
 
 	const router = useRouter();
 
@@ -23,7 +23,7 @@ const SidebarItem: React.FC<Props> = ({ className = '', ref, label, Icon, href =
 	return (
 		<Link
 			href={href}
-			onClick={() => setIsMenuOpened(false)}
+			//onClick={() => setIsMenuOpened(false)}
 			className={className + ' grid grid-cols-[24px_1fr] items-center gap-[14px] h-16 pl-16'}
 			{...props}
 		>

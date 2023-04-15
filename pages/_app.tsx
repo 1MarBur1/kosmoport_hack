@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import '@/styles/globals.css';
 import '@/styles/font.css';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 
 const queryClient = new QueryClient();
 
