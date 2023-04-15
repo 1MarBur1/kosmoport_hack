@@ -1,7 +1,7 @@
 import Props from './LoginLayout.props';
 //import Logo from '@components/common/Logo';
 
-import LoginImage from '@assets/loginImage.svg';
+import LoginImage from '@/assets/loginImage.svg';
 
 const LoginLayout: React.FC<Props> = ({ children, className = '', ...props }) => {
 	return (
