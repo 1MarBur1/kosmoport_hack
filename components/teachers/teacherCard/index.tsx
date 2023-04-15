@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Props from './teacherCard.props';
+import Serega from '@/assets/teachers/serega.svg';
 
 const TeacherCard: React.FC<Props> = ({ fio, phone, email, avatar, courses, ...props }) => {
 	return (
@@ -10,31 +11,44 @@ const TeacherCard: React.FC<Props> = ({ fio, phone, email, avatar, courses, ...p
 			}}
 			{...props}
 		>
-			<div className='p-[20px] w-[489px]'>
-				<div className='flex mb-4 justify-between'>
-					<div>
-						<Image
-							width={80}
-							height={80}
-							className='rounded-[100px] object-cover'
-							alt=''
-							src={avatar} />
-					</div>
-					<div className='flex flex-col'>
-						<div className='flex'>
-							<p className='text-BodyText_16 text-black text-left'>
-								{phone}
-							</p>
-							<p className='text-BodyText_16 text-black'>
-								{email}
-							</p>
-						</div>
-						<p className='text-heading-2 text-black'>
-							{fio}
+			<div className='p-[20px] min-w-[489px] flex mb-4 justify-between'>
+				<div>
+					<Image
+						width={80}
+						height={80}
+						className='rounded-[100px] object-cover'
+						alt=''
+						src={Serega.src} />
+				</div>
+				<div className='text-left'>
+					<div className='flex w-full gap-1'>
+						<p className='text-BodyText_14'>
+							{phone}
 						</p>
-						<div className='text-BodyText_16 text-grey2'>
-							{courses}
-						</div>
+						<p className='text-violet text-BodyText_14'>
+							•
+						</p>
+						<p className='text-BodyText_14'>
+							{email}
+						</p>
+					</div>
+					<p className='text-heading-2'>
+						{fio}
+					</p>
+					<div className='text-BodyText_14 flex gap-1.5'>
+						{courses.map((course, index: number) => (
+							<>
+								<p key={index} className='text-grey3'>
+									{course}
+								</p>
+
+								{index !== courses.length-1 && (
+									<p className='text-grey3'>
+										•
+									</p>
+								)}
+							</>
+						))}
 					</div>
 				</div>
 			</div>

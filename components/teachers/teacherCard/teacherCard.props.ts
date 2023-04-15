@@ -4,7 +4,7 @@ interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement
 	fio: string;
 	phone: string;
 	email: string;
-	courses: string;
+	courses: string[];
     avatar: string;
 }
 
