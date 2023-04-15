@@ -7,7 +7,7 @@ import useMenu from '../../stores/useMenu';
 import Sidebar from '../Sidebar';
 import Props from './SidebarLayout.props';
 
-import Logo from '@components/common/Logo';
+import Logo from '@/components/common/Logo';
 import BurgerMenuIcon from '../../assets/ic_burgerMenu.svg';
 
 const SidebarLayout: React.FC<Props> = ({ children, className = '', ...props }) => {

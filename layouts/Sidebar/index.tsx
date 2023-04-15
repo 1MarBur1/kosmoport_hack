@@ -2,11 +2,11 @@ import Props from './Sidebar.props';
 import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from 'react';
 
-import SidebarItem from '@components/common/SidebarItem';
-import Logo from '@components/common/Logo';
+import SidebarItem from '@/components/common/SidebarItem';
+import Logo from '@/components/common/Logo';
 import useMenu from '@/stores/useMenu';
 
-import CloseLgIcon from '@assets/ic_close_lg.svg';
+import CloseLgIcon from '@/assets/ic_close_lg.svg';
 // import CloseLgIcon from '../../assets/ic_close_lg.svg';s
 
 import { SIDEBAR_ITEMS, SIDEBAR_ITEMS_ADMIN, SIDEBAR_ITEMS_HR, SIDEBAR_ITEMS_DOC } from './Sidebar.config';

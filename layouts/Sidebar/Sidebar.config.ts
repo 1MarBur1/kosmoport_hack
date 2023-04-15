@@ -1,9 +1,13 @@
-import Courses from '@assets/sidebarIcons/courses.svg';
-import Requests from '@assets/sidebarIcons/requests.svg';
-import Classes from '@assets/sidebarIcons/classes.svg';
-import Students from '@assets/sidebarIcons/students.svg';
-import Teachers from '@assets/sidebarIcons/teachers.svg';
-import Profile from '@assets/sidebarIcons/profile.svg';
+import Career from '@/assets/sidebarIcons/courses.svg';
+import Employees from '@/assets/sidebarIcons/courses.svg';
+import Feedback from '@/assets/sidebarIcons/courses.svg';
+import Home from '@/assets/sidebarIcons/courses.svg';
+import Projects from '@/assets/sidebarIcons/courses.svg';
+import Analytic from '@/assets/sidebarIcons/courses.svg';
+import HR from '@/assets/sidebarIcons/courses.svg';
+import Rocket from '@/assets/sidebarIcons/courses.svg';
+import Research from '@/assets/sidebarIcons/courses.svg';
+import Coin from '@/assets/sidebarIcons/courses.svg';
 
 export type sidebarItemColorTypes = 'fill' | 'stroke';
 
@@ -15,96 +19,104 @@ interface ISidebarItem {
 	colorType: sidebarItemColorTypes;
 }
 
+const SIDEBAR_ITEMS: ISidebarItem[] = [
+	{
+		label: 'Главная',
+		href: '/dashboard',
+		icon: Home,
+		colorType: 'stroke',
+		validateEndsWith: true,
+	},
+	{
+		label: 'Проекты',
+		href: '/projects',
+		icon: Projects,
+		colorType: 'fill',
+	},
+	{
+		label: 'Коллеги',
+		href: '/employees',
+		icon: Employees,
+		colorType: 'stroke',
+	},
+	{
+		label: 'Справочная',
+		href: '/help',
+		icon: Feedback,
+		colorType: 'fill',
+	},
+	{
+		label: 'Путь в компании',
+		href: '/career',
+		icon: Career,
+		colorType: 'stroke',
+	},
+];
+
+const SIDEBAR_ITEMS_HR: ISidebarItem[] = [
+	{
+		label: 'Сотрудники',
+		href: '/hr/employees',
+		icon: Employees,
+		colorType: 'stroke',
+	},
+	{
+		label: 'Обратная связь',
+		href: '/hr/feedback',
+		icon: Feedback,
+		colorType: 'fill',
+	},
+];
+
 const SIDEBAR_ITEMS_ADMIN: ISidebarItem[] = [
 	{
-		label: 'Все курсы',
-		href: '/courses',
-		icon: Courses,
-		colorType: 'fill',
+		label: 'Аналитика',
+		href: '/admin',
+		icon: Analytic,
+		colorType: 'stroke',
 		validateEndsWith: true,
 	},
 	{
-		label: 'Заявки',
-		href: '/requests',
-		icon: Requests,
-		colorType: 'fill',
+		label: 'Все сотрудники',
+		href: '/admin/employees',
+		icon: Employees,
+		colorType: 'stroke',
 	},
 	{
-		label: 'Занятия',
-		href: '/classes',
-		icon: Classes,
-		colorType: 'fill',
-	},
-	{
-		label: 'Ученики',
-		href: '/students',
-		icon: Students,
-		colorType: 'fill',
-	},
-	{
-		label: 'Преподаватели',
-		href: '/teachers',
-		icon: Teachers,
-		colorType: 'fill',
-	},
-	{
-		label: 'Профиль',
-		href: '/profile',
-		icon: Profile,
+		label: 'HR',
+		href: '/admin/humanresources',
+		icon: HR,
 		colorType: 'fill',
 	},
 ];
 
-const SIDEBAR_ITEMS_TEACHER: ISidebarItem[] = [
+const SIDEBAR_ITEMS_DOC: ISidebarItem[] = [
 	{
-		label: 'Мои курсы',
-		href: '/teacher/courses',
-		icon: Courses,
+		label: 'С чего начать?',
+		href: '#start',
+		icon: Rocket,
 		colorType: 'fill',
 		validateEndsWith: true,
 	},
 	{
-		label: 'Мои занятия',
-		href: '/teacher/classes',
-		icon: Classes,
+		label: 'Исследования',
+		href: '#second',
+		icon: Research,
 		colorType: 'fill',
 		validateEndsWith: true,
 	},
 	{
-		label: 'Мои ученики',
-		href: '/teacher/students/',
-		icon: Students,
-		colorType: 'fill',
-		validateEndsWith: true,
-	},
-	{
-		label: 'Профиль',
-		href: '/teacher/profile/',
-		icon: Profile,
-		colorType: 'fill',
-		validateEndsWith: true,
-	},
-];
-
-const SIDEBAR_ITEMS_STUDENT: ISidebarItem[] = [
-	{
-		label: 'Мои курсы',
-		href: '/student/courses',
-		icon: Courses,
-		colorType: 'fill',
-		validateEndsWith: true,
-	},
-	{
-		label: 'Профиль',
-		href: '/student/profile/',
-		icon: Profile,
-		colorType: 'fill',
+		label: 'Экономика проектов',
+		href: '#third',
+		icon: Coin,
+		colorType: 'stroke',
 		validateEndsWith: true,
 	},
 ];
 
 export {
+	SIDEBAR_ITEMS,
+	SIDEBAR_ITEMS_HR,
 	SIDEBAR_ITEMS_ADMIN,
-	SIDEBAR_ITEMS_TEACHER,
-	SIDEBAR_ITEMS_STUDENT,
+	SIDEBAR_ITEMS_DOC,
 };
