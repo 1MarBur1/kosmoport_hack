@@ -11,6 +11,7 @@ import Teacher4 from '@/assets/teachers/4.png';
 import Image from 'next/image';
 import Footer from '@/assets/landing/footer.png';
 import WhiteLogo from '@/assets/landing/white_logo.svg';
+import Link from 'next/link';
 
 const HomePage = (): JSX.Element => {
 	return (
@@ -37,7 +38,9 @@ const HomePage = (): JSX.Element => {
 					color='black'
 					className='w-[366px] h-[66px] mt-[22px] ml-[417px]'
 				>
-					Записаться на курс!
+					<Link href={'/'}>
+						Записаться на курс!
+					</Link>
 				</Button>
 			</section>
 			<section className='ml-[120px] mt-[67px]'>
@@ -88,7 +91,9 @@ const HomePage = (): JSX.Element => {
 						color='black'
 						className='w-[298px] h-[66px] ml-[715px]'
 					>
-						Записаться на курс!
+						<Link href={'/'}>
+							Записаться на курс!
+						</Link>
 					</Button>
 				</div>
 			</section>
