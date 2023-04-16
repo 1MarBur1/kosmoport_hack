@@ -1,7 +1,6 @@
 import Button from '../Button';
 import Input from '../Input';
 import Props from './TagsPeeker.props';
-import PlusIcon from '@assets/ic_plus.svg';
 import { useState } from 'react';
 import TagCard from '../TagCard';
 

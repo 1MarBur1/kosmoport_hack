@@ -14,7 +14,7 @@ function getButtonStyles(color: buttonColors, variant: buttonVariants): string {
 			textColor = 'text-black';
 			break;
 		case 'primary':
-			bgColor = 'bg-primary';
+			bgColor = 'bg-violet';
 			borderColor = 'border-primary';
 			textColor = 'text-primary';
 			break;

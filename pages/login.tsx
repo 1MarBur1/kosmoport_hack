@@ -23,7 +23,12 @@ const LoginPage = (): JSX.Element => {
 			email: Yup.string().email().required('Это обязательное поле'),
 			password: Yup.string().required('Это обязательное поле'),
 		}),
-		onSubmit: () => router.push('/'),
+		onSubmit: (values) => {
+			if (values.email === 'admin@mail.ru' && values.password === 'admin')
+				router.push('/admin');
+			else if (values.email === 'student@mail.ru' && values.password === '123')
+				router.push('/student');
+		},
 	});
 
 	return (
@@ -43,8 +48,8 @@ const LoginPage = (): JSX.Element => {
 					type='email'
 					name='email'
 					onChange={formik.handleChange}
-					value={formik.values.password}
-					errorMessage={formik.submitCount ? formik.errors.password : undefined} />
+					value={formik.values.email}
+					errorMessage={formik.submitCount ? formik.errors.email : undefined} />
 				<Input
 					className='w-full'
 					placeholder='Пароль'

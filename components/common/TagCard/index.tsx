@@ -1,5 +1,4 @@
 import Props from './TagCard.props';
-import CrossIcon from '@assets/ic_cancel.svg';
 
 const TagCard: React.FC<Props> = ({ tagName, onDeleteTag, ...props }) => {
 	return (
@@ -7,9 +6,6 @@ const TagCard: React.FC<Props> = ({ tagName, onDeleteTag, ...props }) => {
 			<p>
 				{tagName}
 			</p>
-			<button onClick={onDeleteTag}>
-				<CrossIcon />
-			</button>
 		</div>
 	);
 };

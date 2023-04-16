@@ -4,18 +4,11 @@ import { useEffect, useMemo, useState } from 'react';
 
 import SidebarItem from '@/components/common/SidebarItem';
 import Logo from '@/components/common/Logo';
-import useMenu from '@/stores/useMenu';
-
-import CloseLgIcon from '@/assets/ic_close_lg.svg';
-// import CloseLgIcon from '../../assets/ic_close_lg.svg';s
 
 import { SIDEBAR_ITEMS, SIDEBAR_ITEMS_ADMIN, SIDEBAR_ITEMS_HR, SIDEBAR_ITEMS_DOC } from './Sidebar.config';
-import Button from '@/components/common/Button';
 
-const Sidebar: React.FC<Props> = ({ className = '', style, ...props }) => {
+const Sidebar: React.FC<Props> = ({ className = '', ...props }) => {
 	const router = useRouter();
-
-	const { setIsMenuOpened } = useMenu();
 
 	const sidebarItems = useMemo(() => {
 		if(router.pathname.includes('hr'))
@@ -42,25 +35,17 @@ const Sidebar: React.FC<Props> = ({ className = '', style, ...props }) => {
 	return (
 		<nav
 			className={className
-				+ ' min-h-full pt-[78px] lg:pt-14 pb-6 lg:pb-[50px] grid grid-rows-[43px_1fr_auto] border-r-1 border-[#F5F5F5]'}
-			style={{
-				...style,
-				display: 'grid',
-			}}
+				+ ' h-screen pt-14 pb-[50px] pr-14'}
 			{...props}
-		>
-			<div className='flex justify-between items-center px-5 lg:px-auto'>
-				<Logo className='lg:ml-12' />
-				<button className='lg:hidden' onClick={() => setIsMenuOpened(false)}>
-					<CloseLgIcon className='stroke-primary' />
-				</button>
-			</div>
-			<div className='relative mt-[49px]'>
+		>	
+			<Logo className='inline-block ml-4' />
+
+			<div className='mt-20'>
 				<div
-					className='w-full h-16 bg-lightGrey absolute transition-all duration-200 rounded-[20px] ml-5'
+					className='h-16 bg-lightGrey absolute transition-all duration-200'
 					style={{ top: spanPadding }}
 				></div>
-				<div className='absolute w-full'>
+				<div>
 					{sidebarItems.map((i, num) => (
 						<SidebarItem
 							key={num}
@@ -72,16 +57,6 @@ const Sidebar: React.FC<Props> = ({ className = '', style, ...props }) => {
 							onMouseEnter={() => setSpanPadding(64 * num)}
 							onMouseLeave={() => setInitialSpanPadding()} />
 					))}
-					{router.pathname.includes('hr') && (
-						<Button
-							color='primary'
-							variant='filled'
-							className='w-full ml-10 mr-130 mt-3'
-							onClick={() => router.push('/hr/employees/new')}
-						>
-							Создать сотрудника
-						</Button>
-					)}
 				</div>
 			</div>
 		</nav>
