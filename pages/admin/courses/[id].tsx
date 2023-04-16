@@ -88,12 +88,15 @@ const StudentCoursePage = (): JSX.Element => {
 					Заявки
 				</h3>
 				
-				{!data?.is_submitted && (
+				{!data?.is_submitted && data?.docs_ids!='' && (
 					<StudentCard 
-						goToCourse={() => editMutation.mutate({
-							is_submitted: true,
-							id: Number(router.query.id as string),
-						})} 
+						goToCourse={() => {
+							editMutation.mutate({
+								is_submitted: true,
+								id: Number(router.query.id as string),
+							});
+							router.reload();
+						}} 
 						teacher={data?.docs_ids as string}
 						title={data?.image_id as string} />
 				)}
